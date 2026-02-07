@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 TeeBaby, Will You Be My Valentine? 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 25%, #1a0a0a 50%, #2d1515 75%, #1a0a0a 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Hearts Animation */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            animation: floatUp linear infinite;
+            opacity: 0.6;
+            font-size: 20px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkle effect */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #ff6b9d;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 1.5s ease-in-out infinite;
+            box-shadow: 0 0 10px #ff6b9d, 0 0 20px #ff6b9d;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Main Content */
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Glowing Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: #ff6b9d;
+            text-shadow: 
+                0 0 10px rgba(255, 107, 157, 0.5),
+                0 0 20px rgba(255, 107, 157, 0.3),
+                0 0 30px rgba(255, 107, 157, 0.2);
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 10px rgba(255, 107, 157, 0.5),
+                    0 0 20px rgba(255, 107, 157, 0.3),
+                    0 0 30px rgba(255, 107, 157, 0.2);
+            }
+            to {
+                text-shadow: 
+                    0 0 20px rgba(255, 107, 157, 0.8),
+                    0 0 40px rgba(255, 107, 157, 0.5),
+                    0 0 60px rgba(255, 107, 157, 0.3);
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .nickname {
+            color: #ff6b9d;
+            font-weight: 600;
+        }
+
+        /* Video Card */
+        .video-card {
+            background: linear-gradient(145deg, rgba(255, 107, 157, 0.1), rgba(255, 107, 157, 0.05));
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            border-radius: 24px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 20px 60px rgba(255, 107, 157, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 1s ease-out 0.3s both;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 107, 157, 0.1),
+                transparent
+            );
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        /* Message */
+        .message {
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .message-text {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        .heart-icon {
+            display: inline-block;
+            animation: heartbeat 1s ease-in-out infinite;
+            color: #ff6b9d;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Interactive Buttons */
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        .btn-no {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-no:hover {
+            transform: translateX(100px);
+        }
+
+        /* Success Screen */
+        .success-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a0a0a, #2d1515);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-screen.active {
+            display: flex;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .success-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: #ff6b9d;
+            text-shadow: 
+                0 0 20px rgba(255, 107, 157, 0.8),
+                0 0 40px rgba(255, 107, 157, 0.5);
+            margin-bottom: 20px;
+            animation: celebratePulse 0.5s ease-out;
+        }
+
+        @keyframes celebratePulse {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .success-text {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+        }
+
+        .big-heart {
+            font-size: 100px;
+            animation: bigHeartbeat 1s ease-in-out infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes bigHeartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.2); }
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .footer-heart {
+            color: #ff6b9d;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .btn-no:hover {
+                transform: translateY(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Sparkles -->
+    <div id="sparkles"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Hey TeeBaby 💕</h1>
+            <p class="subtitle">I have something special for you...</p>
+        </header>
+
+        <div class="video-card">
+            <div class="video-wrapper">
+                <video controls playsinline>
+                    <source src="https://res.cloudinary.com/dff61xjdt/video/upload/v1770453809/d5450724af81639394ac268aff1f892a1770448008_deikm0.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="message">
+            <p class="message-text">
+                Tracy, you make every day feel like Valentine's Day. 
+                <span class="heart-icon">💖</span><br><br>
+                So... will you be my Valentine?
+            </p>
+
+            <div class="buttons">
+                <button class="btn btn-yes" onclick="sayYes()">Yes! 💕</button>
+                <button class="btn btn-no" id="noBtn">No</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            Made with <span class="footer-heart">♥</span> just for you
+        </footer>
+    </div>
+
+    <!-- Success Screen -->
+    <div class="success-screen" id="successScreen">
+        <div class="big-heart">💖</div>
+        <h2 class="success-title">Yay!!!</h2>
+        <p class="success-text">
+            I knew you'd say yes, TeeBaby! 🥰<br><br>
+            You just made me the happiest person ever!<br>
+            I love you so much! 💕
+        </p>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            const hearts = ['❤️', '💕', '💖', '💗', '💓', '💘', '💝'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    container.appendChild(heart);
+
+                    // Remove heart after animation
+                    setTimeout(() => heart.remove(), 10000);
+                }, i * 500);
+            }
+        }
+
+        // Create sparkles
+        function createSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            
+            for (let i = 0; i < 30; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                sparklesContainer.appendChild(sparkle);
+            }
+        }
+
+        // Initialize effects
+        createHearts();
+        createSparkles();
+        setInterval(createHearts, 8000);
+
+        // Make "No" button run away
+        const noBtn = document.getElementById('noBtn');
+        let noClickCount = 0;
+        const funnyTexts = ['Are you sure?', 'Think again!', 'Please? 🥺', 'Pretty please?', 'I\'ll be sad 😢', 'One more chance!'];
+
+        noBtn.addEventListener('mouseover', function() {
+            if (window.innerWidth > 480) {
+                const x = Math.random() * (window.innerWidth - 150);
+                const y = Math.random() * (window.innerHeight - 50);
+                this.style.position = 'fixed';
+                this.style.left = x + 'px';
+                this.style.top = y + 'px';
+                this.style.zIndex = '1000';
+            }
+        });
+
+        noBtn.addEventListener('click', function() {
+            noClickCount++;
+            if (noClickCount < funnyTexts.length) {
+                this.textContent = funnyTexts[noClickCount];
+            } else {
+                this.textContent = 'Just say YES! 😄';
+                this.style.opacity = '0.3';
+            }
+        });
+
+        // Success function
+        function sayYes() {
+            document.getElementById('successScreen').classList.add('active');
+            
+            // Create celebration hearts explosion
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = ['❤️', '💕', '💖', '💗', '💓', '💘', '💝', '🎉', '✨'][Math.floor(Math.random() * 9)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    document.getElementById('successScreen').appendChild(heart);
+                }, i * 50);
+            }
+        }
+    </script>
+</body>
+</html>
