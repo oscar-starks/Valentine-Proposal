@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💕 TeeBaby, Will You Be My Valentine? 💕</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -45,9 +48,11 @@
                 transform: translateY(0) rotate(0deg) scale(1);
                 opacity: 0.6;
             }
+
             50% {
                 opacity: 0.8;
             }
+
             100% {
                 transform: translateY(-100vh) rotate(360deg) scale(0.5);
                 opacity: 0;
@@ -67,8 +72,17 @@
         }
 
         @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* Main Content */
@@ -95,6 +109,7 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -105,7 +120,7 @@
             font-family: 'Dancing Script', cursive;
             font-size: clamp(2.5rem, 8vw, 5rem);
             color: #ff6b9d;
-            text-shadow: 
+            text-shadow:
                 0 0 10px rgba(255, 107, 157, 0.5),
                 0 0 20px rgba(255, 107, 157, 0.3),
                 0 0 30px rgba(255, 107, 157, 0.2);
@@ -115,13 +130,14 @@
 
         @keyframes glow {
             from {
-                text-shadow: 
+                text-shadow:
                     0 0 10px rgba(255, 107, 157, 0.5),
                     0 0 20px rgba(255, 107, 157, 0.3),
                     0 0 30px rgba(255, 107, 157, 0.2);
             }
+
             to {
-                text-shadow: 
+                text-shadow:
                     0 0 20px rgba(255, 107, 157, 0.8),
                     0 0 40px rgba(255, 107, 157, 0.5),
                     0 0 60px rgba(255, 107, 157, 0.3);
@@ -147,7 +163,7 @@
             border-radius: 24px;
             padding: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: 
+            box-shadow:
                 0 20px 60px rgba(255, 107, 157, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             animation: fadeInUp 1s ease-out 0.3s both;
@@ -164,18 +180,21 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent,
-                rgba(255, 107, 157, 0.1),
-                transparent
-            );
+            background: linear-gradient(45deg,
+                    transparent,
+                    rgba(255, 107, 157, 0.1),
+                    transparent);
             animation: shimmer 3s infinite;
         }
 
         @keyframes shimmer {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
         }
 
         @keyframes fadeInUp {
@@ -183,6 +202,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -225,17 +245,25 @@
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
         }
 
         /* Interactive Buttons */
         .buttons {
             display: flex;
             gap: 20px;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
             margin-top: 20px;
+            width: 100%;
         }
 
         .btn {
@@ -297,15 +325,20 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .success-title {
             font-family: 'Dancing Script', cursive;
             font-size: clamp(3rem, 10vw, 6rem);
             color: #ff6b9d;
-            text-shadow: 
+            text-shadow:
                 0 0 20px rgba(255, 107, 157, 0.8),
                 0 0 40px rgba(255, 107, 157, 0.5);
             margin-bottom: 20px;
@@ -313,9 +346,17 @@
         }
 
         @keyframes celebratePulse {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .success-text {
@@ -331,10 +372,23 @@
         }
 
         @keyframes bigHeartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.2); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.2);
+            }
         }
 
         /* Footer */
@@ -353,13 +407,13 @@
         /* Responsive */
         @media (max-width: 480px) {
             .buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 280px;
+                flex-direction: row;
+                flex-wrap: wrap;
             }
 
             .btn {
-                width: 100%;
+                padding: 14px 30px;
+                font-size: 1rem;
             }
 
             .btn-no:hover {
@@ -368,6 +422,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Floating Hearts Background -->
     <div class="hearts-container" id="heartsContainer"></div>
@@ -385,7 +440,9 @@
         <div class="video-card">
             <div class="video-wrapper">
                 <video controls playsinline>
-                    <source src="https://res.cloudinary.com/dff61xjdt/video/upload/v1770453809/d5450724af81639394ac268aff1f892a1770448008_deikm0.mp4" type="video/mp4">
+                    <source
+                        src="https://res.cloudinary.com/dff61xjdt/video/upload/v1770453809/d5450724af81639394ac268aff1f892a1770448008_deikm0.mp4"
+                        type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -393,7 +450,7 @@
 
         <div class="message">
             <p class="message-text">
-                Tracy, you make every day feel like Valentine's Day. 
+                My Baby, you make every day feel like Valentine's Day.
                 <span class="heart-icon">💖</span><br><br>
                 So... will you be my Valentine?
             </p>
@@ -425,7 +482,7 @@
         function createHearts() {
             const container = document.getElementById('heartsContainer');
             const hearts = ['❤️', '💕', '💖', '💗', '💓', '💘', '💝'];
-            
+
             for (let i = 0; i < 20; i++) {
                 setTimeout(() => {
                     const heart = document.createElement('div');
@@ -445,7 +502,7 @@
         // Create sparkles
         function createSparkles() {
             const sparklesContainer = document.getElementById('sparkles');
-            
+
             for (let i = 0; i < 30; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.className = 'sparkle';
@@ -466,7 +523,7 @@
         let noClickCount = 0;
         const funnyTexts = ['Are you sure?', 'Think again!', 'Please? 🥺', 'Pretty please?', 'I\'ll be sad 😢', 'One more chance!'];
 
-        noBtn.addEventListener('mouseover', function() {
+        noBtn.addEventListener('mouseover', function () {
             if (window.innerWidth > 480) {
                 const x = Math.random() * (window.innerWidth - 150);
                 const y = Math.random() * (window.innerHeight - 50);
@@ -477,7 +534,7 @@
             }
         });
 
-        noBtn.addEventListener('click', function() {
+        noBtn.addEventListener('click', function () {
             noClickCount++;
             if (noClickCount < funnyTexts.length) {
                 this.textContent = funnyTexts[noClickCount];
@@ -490,7 +547,7 @@
         // Success function
         function sayYes() {
             document.getElementById('successScreen').classList.add('active');
-            
+
             // Create celebration hearts explosion
             for (let i = 0; i < 50; i++) {
                 setTimeout(() => {
@@ -506,4 +563,5 @@
         }
     </script>
 </body>
+
 </html>
